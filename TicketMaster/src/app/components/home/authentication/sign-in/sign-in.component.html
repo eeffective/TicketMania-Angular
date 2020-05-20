@@ -1,0 +1,34 @@
+<form *ngIf="!isLoggedIn" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <p>Sign in!</p>
+    <input
+      [ngClass]="{
+        'not-valid':
+          myForm.get('username').errors && myForm.get('username').touched
+      }"
+      type="text"
+      formControlName="username"
+      placeholder="Username"
+    />
+    <div *ngIf="myForm.get('username').errors && myForm.get('username').touched">
+      <span *ngIf="myForm.get('username').errors.required">
+        Username is required
+      </span>
+    </div>
+    <input
+      [ngClass]="{
+        'not-valid':
+          myForm.get('password').errors && myForm.get('password').touched
+      }"
+      type="text"
+      formControlName="password"
+      placeholder="Password"
+    />
+    <div *ngIf="myForm.get('password').errors && myForm.get('password').touched">
+      <span *ngIf="myForm.get('password').errors.required">
+        Password is required
+      </span>
+    </div>
+    <button type="submit">Sing in</button>
+  </form>
+  
+

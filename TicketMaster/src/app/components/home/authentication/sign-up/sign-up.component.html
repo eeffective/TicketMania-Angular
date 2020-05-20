@@ -1,0 +1,77 @@
+<form *ngIf="!isSuccesful" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <p>Sign up!</p>
+    <input
+      [ngClass]="{
+        'not-valid':
+          myForm.get('username').errors && myForm.get('username').touched
+      }"
+      type="text"
+      formControlName="username"
+      placeholder="Username"
+    />
+    <div *ngIf="myForm.get('username').errors && myForm.get('username').touched">
+      <span *ngIf="myForm.get('username').errors.required">
+        Username is required
+      </span>
+    </div>
+    <input
+      [ngClass]="{
+        'not-valid':
+          myForm.get('email').errors && myForm.get('email').touched
+      }"
+      type="text"
+      formControlName="email"
+      placeholder="Email"
+    />
+    <div *ngIf="myForm.get('email').errors && myForm.get('email').touched">
+      <span *ngIf="myForm.get('email').errors.required">
+        Email is required
+      </span>
+    </div>
+    <input
+      [ngClass]="{
+        'not-valid':
+          myForm.get('password').errors && myForm.get('password').touched
+      }"
+      type="text"
+      formControlName="password"
+      placeholder="Password"
+    />
+    <div *ngIf="myForm.get('password').errors && myForm.get('password').touched">
+      <span *ngIf="myForm.get('password').errors.required">
+        Password is required
+      </span>
+    </div>
+    <input
+      [ngClass]="{
+        'not-valid':
+          myForm.get('firstname').errors && myForm.get('firstname').touched
+      }"
+      type="text"
+      formControlName="firstname"
+      placeholder="First name"
+    />
+    <div *ngIf="myForm.get('firstname').errors && myForm.get('firstname').touched">
+      <span *ngIf="myForm.get('firstname').errors.required">
+        First name is required
+      </span>
+    </div>
+    <input
+      [ngClass]="{
+        'not-valid':
+          myForm.get('lastname').errors && myForm.get('lastname').touched
+      }"
+      type="text"
+      formControlName="lastname"
+      placeholder="Last name"
+    />
+    <div *ngIf="myForm.get('lastname').errors && myForm.get('lastname').touched">
+      <span *ngIf="myForm.get('lastname').errors.required">
+        Last name is required
+      </span>
+    </div>
+    
+    <button type="submit">Sign up</button>
+  </form>
+  
+

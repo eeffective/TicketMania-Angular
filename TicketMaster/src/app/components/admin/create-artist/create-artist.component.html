@@ -1,0 +1,21 @@
+<form [formGroup]="myForm" (ngSubmit)="createArtist()">
+    <p>Create Artist</p>
+    <input
+      [ngClass]="{
+        'has-error': myForm.get('name').errors && myForm.get('name').touched
+      }"
+      type="text"
+      formControlName="name"
+      placeholder="Name"
+    />
+    <div *ngIf="myForm.get('name').errors && myForm.get('name').touched">
+      <span *ngIf="myForm.get('name').errors.required">
+        Name is required
+      </span>
+    </div>
+  
+    <input type="text" formControlName="biography" placeholder="Biography" />
+    <input type="text" formControlName="genre" placeholder="Genre" />
+    <button type="submit">Save</button>
+  </form>
+  
