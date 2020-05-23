@@ -6,7 +6,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { UserComponent } from './components/user/user.component';
 import { HeaderComponent } from './components/header/header.component';
-
 @NgModule({
   declarations: [
     AppComponent,

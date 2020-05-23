@@ -1,0 +1,115 @@
+* {
+  font-family: "Roboto", "sant-serif";
+}
+
+.drop-item .fas {
+  color: #000 !important;
+}
+
+.tm-logo {
+  color: #fff;
+}
+
+.navbar-collapse a:hover {
+  color: #000 !important;
+  font-weight: bold;
+}
+
+nav {
+  background-color: #ff6d1c;
+  padding: 1.5em 1.5em 1.5em 1.5em;
+  color: #fff;
+
+  .tm-logo {
+    font-weight: 900;
+    letter-spacing: 0.35em;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .navbar-collapse {
+    a:hover {
+      font-weight: 900;
+    }
+  }
+
+  .tm-searchbar {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: #fff;
+    color: #fff;
+  }
+
+  .fa-user {
+    font-size: 2em;
+  }
+
+  .fa-search {
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  .navbar-nav li:hover>.dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-item {
+    color: #000;
+  }
+}
+
+/*-------------------- Login/Register forms styling -------------------*/
+
+.smallicon {
+  font-size: 1.3em !important;
+}
+
+
+.modal {
+  color: #fff;
+
+  li i {
+    color: #ff6d1c;
+  }
+
+  .nav-tabs {
+    border: none
+  }
+
+  input {
+    color: #fff;
+  }
+
+  .modal-content {
+    background-color: #ff6d1c;
+  }
+
+  .modal-body {
+    background-color: #ff6d1c;
+    color: #fff;
+  }
+
+  .tab-content {
+    background-color: #ff6d1c;
+    color: #fff !important;
+  }
+
+  .nav-link.active {
+    background-color: #ff6d1c;
+    border-color: none;
+    color: #fff;
+  }
+
+  .nav-tabs .nav-link {
+    border: 1px solid transparent;
+    color: #fff;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+
+}

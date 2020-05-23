@@ -1,0 +1,45 @@
+<div class="container mt-5">
+  <h1 class="recommended-title">Aanbevolen</h1>
+  <div class="row">
+    <!-- Card 2 -->
+    <div *ngFor="let event of events" class="col-md-4 card-container">
+      <div class="card-flip">
+        <!-- Card 2 Front -->
+        <div class="card front">
+          <img
+            src="https://i.picsum.photos/id/1054/400/300.jpg"
+            class="card-img-top img-fluid"
+          />
+          <div class="event-date">{{event.genre}}</div>
+          <div class="card-block">
+            <h3 class="card-title">{{ event.name }}</h3>
+            <p class="card-text">{{ event.location }}</p>
+          </div>
+        </div>
+        <!-- End Card 2 Front -->
+
+        <!-- Card 2 Back -->
+        <div class="card back">
+          <div class="card-header">
+            Line Up 
+          </div>
+          <div class="card-block">
+            <ul class="list-group">
+              <li
+                *ngFor="let artist of event.musicArtists"
+                class="list-group-item"
+              >
+                <a target="_blank" href="https://ikwilhierweg.nl/">{{ artist.name }}</a>
+              </li>
+            </ul>
+            <div class="form-group information-btn">
+              <div class="btn btn-outline-premair">Informatie en tickets</div>
+            </div>
+          </div>
+        </div>
+        <!-- End Card 2 Back -->
+      </div>
+    </div>
+    <!-- End Card 2 -->
+  </div>
+</div>
