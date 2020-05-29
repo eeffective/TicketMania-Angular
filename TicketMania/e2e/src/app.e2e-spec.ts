@@ -1,5 +1,6 @@
 import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { browser, by, element, logging } from 'protractor';
+
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -8,10 +9,19 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display app title', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('ticketmania-frontend app is running!');
+    browser.pause();
+    expect(page.getTitleText()).toEqual('TicketMania');
   });
+
+// TODO: doesnt work yet ion why tho, gotta figure it out later lol, time for tft now 
+  it('should display login modal', () => {
+    page.navigateTo();
+    page.getLoginButton().click();
+    expect(page.getTextByCss('[href="#panel7"]').getText()).toEqual('Inloggen');
+   });
+
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser

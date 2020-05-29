@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col ml-5">
+      <h1 class="event-title mb-5">{{ event.name }}</h1>
+      <div class="event-details">
+        <img src="https://i.picsum.photos/id/1054/400/300.jpg" class="card-img-top img-fluid" />
+        <div class="event-description p-2">
+          {{event.description}}
+        </div>
+
+      </div>
+    </div>
+    <div class="col ml-5">
+      <h1 class="tickets-title mb-5">Tickets</h1>
+      <ul class="list-group">
+        <li *ngFor="let ticket of event.tickets" class="list-group-item p-12">
+          <a class="event-ticket" target="_blank" href="https://ikwilhierweg.nl/">{{ticket.ticket.type}} <span
+              class="ticket-price">€{{ticket.price}}</span></a>
+          <p><small class="amount-left">Nog {{ticket.amount}} tickets verkrijgbaar!</small></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="location-container">
+    <div class="location-title"> kaas</div>
+    <div class="location-map"></div>
+  </div>
+</div>

@@ -26,8 +26,8 @@ export class AuthenticationService {
       username: user.username,
       email: user.email,
       password: user.password,
-      firstname: user.firstname,
-      lastname: user.lastname
+      firstName: user.firstName,
+      lastName: user.lastName
     }, httpOptions);
   }
 }

@@ -6,6 +6,14 @@ export class AppPage {
   }
 
   getTitleText(): Promise<string> {
-    return element(by.css('app-root .content span')).getText() as Promise<string>;
+    return element(by.css('app-header .tm-logo')).getText() as Promise<string>;
+  }
+
+  getLoginButton(){
+    return element(by.css('[data-target="#modalLRForm"]'));
+  }
+
+  getTextByCss(css: string){
+    return element(by.css(css));
   }
 }

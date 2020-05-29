@@ -2,22 +2,19 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
-import { SignInComponent } from './components/home/authentication/sign-in/sign-in.component';
-import { SignUpComponent } from './components/home/authentication/sign-up/sign-up.component';
 import { ArtistsListComponent } from './components/admin/artists-list/artists-list.component';
 import { EventsListComponent } from './components/admin/events-list/events-list.component';
 import { UsersListComponent } from './components/admin/users-list/users-list.component';
 import { CreateArtistComponent } from './components/admin/create-artist/create-artist.component';
 import { CreateEventComponent } from './components/admin/create-event/create-event.component';
+import { ArtistDetailsComponent } from './components/shared/artist-details/artist-details.component';
+import { EventDetailsComponent } from './components/shared/event-details/event-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  {
-    path: 'home',
-    component: HomeComponent,
-  },
-  { path: 'sign-in', component: SignInComponent },
-  { path: 'sign-up', component: SignUpComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'artist/:id', component: ArtistDetailsComponent },
+  { path: 'event/:id', component: EventDetailsComponent },
   {
     path: 'admin',
     component: AdminComponent,
@@ -35,12 +32,12 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 
 export const routingComponents = [
+  EventDetailsComponent,
+  ArtistDetailsComponent,
   HomeComponent,
-  SignInComponent,
-  SignUpComponent,
   AdminComponent,
   ArtistsListComponent,
   CreateArtistComponent,

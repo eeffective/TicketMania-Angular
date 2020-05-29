@@ -38,9 +38,8 @@ export class HeaderComponent implements OnInit {
       username: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
-      roles: ['user']
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required]
     });
 
     if (this.tokenStorageService.getToken()) {
@@ -92,12 +91,13 @@ export class HeaderComponent implements OnInit {
     console.log(this.myRegisterForm.value)
 
     this.authService.signUp(this.myRegisterForm.value).subscribe(data => {
-      this.isRegisterFailed = false;
       this.isRegistered = true;
       this.reloadPage();
     }, error => {
       this.errorMessage = error.error.message;
       this.isRegisterFailed = true;
+      console.log(this.errorMessage.toString())
+      this.reloadPage();
     });
   }
 
