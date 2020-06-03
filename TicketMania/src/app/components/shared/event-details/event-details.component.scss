@@ -28,14 +28,22 @@
   float: right;
 }
 
-.event-details{
+.event-details {
   background-color: #ff6d1c;
   color: #fff;
   font-size: 20px;
 
 }
 
-.p-12{
+.p-12 {
   padding: 1.2em 1.2em 0 1.2em;
 
+}
+
+.add-ticket {
+  position: absolute;
+  font-size: 20px;
+  left: 105%;
+  top: 0;
+  padding: 0.8em;
 }

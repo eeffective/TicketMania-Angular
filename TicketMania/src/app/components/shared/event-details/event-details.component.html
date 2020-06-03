@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col ml-5">
+    <div class="col my-auto">
       <h1 class="event-title mb-5">{{ event.name }}</h1>
       <div class="event-details">
         <img src="https://i.picsum.photos/id/1054/400/300.jpg" class="card-img-top img-fluid" />
@@ -15,14 +15,17 @@
       <ul class="list-group">
         <li *ngFor="let ticket of event.tickets" class="list-group-item p-12">
           <a class="event-ticket" target="_blank" href="https://ikwilhierweg.nl/">{{ticket.ticket.type}} <span
-              class="ticket-price">€{{ticket.price}}</span></a>
+              class="ticket-price">€{{ticket.price}}</span>
+          </a>
+          <button (click)="addTicket(ticket, event)" class="add-ticket">+</button>
           <p><small class="amount-left">Nog {{ticket.amount}} tickets verkrijgbaar!</small></p>
         </li>
       </ul>
     </div>
   </div>
-  <div class="location-container">
-    <div class="location-title"> kaas</div>
-    <div class="location-map"></div>
+  <div class="artists-container ml-5">
+    <ul class="artist-list">
+      <li class="artist-item">Name artist here</li>
+    </ul>
   </div>
 </div>

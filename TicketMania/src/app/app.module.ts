@@ -8,6 +8,7 @@ import { UserComponent } from './components/user/user.component';
 import { HeaderComponent } from './components/header/header.component';
 import { EventDetailsComponent } from './components/shared/event-details/event-details.component';
 import { ArtistDetailsComponent } from './components/shared/artist-details/artist-details.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,7 @@ import { ArtistDetailsComponent } from './components/shared/artist-details/artis
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [ ],
+  providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

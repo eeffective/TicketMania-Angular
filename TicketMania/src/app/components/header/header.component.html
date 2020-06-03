@@ -13,10 +13,10 @@
           Genre
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item">Hip Hop</a>
-          <a class="dropdown-item">Trap</a>
-          <a class="dropdown-item">Rap</a>
-          <a class="dropdown-item">Jazz</a>
+          <a class="dropdown-item" (click)="onGenreSelect('Hip Hop')">Hip Hop</a>
+          <a class="dropdown-item" (click)="onGenreSelect('Trap')">Trap</a>
+          <a class="dropdown-item" (click)="onGenreSelect('Rap')">Rap</a>
+          <a class="dropdown-item" (click)="onGenreSelect('Jazz')">Jazz</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item">Alle genres</a>
         </div>
@@ -27,10 +27,10 @@
           Artiest
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item">Sevn Alias</a>
-          <a class="dropdown-item">Slowflow</a>
-          <a class="dropdown-item">Lijpe</a>
-          <a class="dropdown-item">Boef</a>
+          <a class="dropdown-item" (click)="onArtistSelect('Sevn Alias')">Sevn Alias</a>
+          <a class="dropdown-item" (click)="onArtistSelect('Slowflow')">Slowflow</a>
+          <a class="dropdown-item" (click)="onArtistSelect('Lijpe')">Lijpe</a>
+          <a class="dropdown-item" (click)="onArtistSelect('Boef')">Boef</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item">Alle artiesten</a>
         </div>
@@ -41,10 +41,10 @@
           Locatie
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item">IJzeren Man</a>
-          <a class="dropdown-item">Effenaar</a>
-          <a class="dropdown-item">Ahoy</a>
-          <a class="dropdown-item">AFAS Live</a>
+          <a class="dropdown-item" (click)="onLocationSelect('IJzeren Man')" >IJzeren Man</a>
+          <a class="dropdown-item" (click)="onLocationSelect('Effenaar')" >Effenaar</a>
+          <a class="dropdown-item" (click)="onLocationSelect('Ahoy')" >Ahoy</a>
+          <a class="dropdown-item" (click)="onLocationSelect('AFAS')" >AFAS Live</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item">Alle locaties</a>
         </div>
@@ -62,17 +62,21 @@
         <i class="fas fa-user smallicon mr-2"></i> Inloggen | Registreren
       </button>
       <li *ngIf="isLoggedIn" class="nav-item dropdown">
-        <button *ngIf="isLoggedIn" data-toggle="dropdown" class="btn btn-outline-premair my-2 my-sm-0 mr-sm-3 custom-radius"
-          type="submit">
+        <button *ngIf="isLoggedIn" data-toggle="dropdown"
+          class="btn btn-outline-premair my-2 my-sm-0 mr-sm-3 custom-radius" type="submit">
           <i class="fas fa-user smallicon mr-2"></i> Mijn account
         </button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a *ngIf="isLoggedIn && isUser" class="dropdown-item" href="#"><i class="fas fa-shopping-cart"></i> Winkelwagen</a>
-          <a *ngIf="isLoggedIn && isUser" class="dropdown-item" href="#"><i class="fas fa-user-edit"></i> Mijn profiel</a>
-          <a *ngIf="isLoggedIn && isUser" class="dropdown-item" href="#"><i class="fas fa-history"></i> Mijn koopgeschiedenis</a>
+          <a *ngIf="isLoggedIn && isUser" class="dropdown-item" href="#"><i class="fas fa-shopping-cart"></i>
+            Winkelwagen</a>
+          <a *ngIf="isLoggedIn && isUser" class="dropdown-item" href="#"><i class="fas fa-user-edit"></i> Mijn
+            profiel</a>
+          <a *ngIf="isLoggedIn && isUser" class="dropdown-item" href="#"><i class="fas fa-history"></i> Mijn
+            koopgeschiedenis</a>
 
           <div class="dropdown-divider"></div>
-          <a *ngIf="isLoggedIn" class="dropdown-item" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Uitloggen</a>
+          <a *ngIf="isLoggedIn" class="dropdown-item" (click)="logout()"><i class="fas fa-sign-out-alt"></i>
+            Uitloggen</a>
         </div>
       </li>
     </ul>

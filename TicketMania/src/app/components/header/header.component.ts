@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/services/authentication/token-storage.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -25,7 +26,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     private tokenStorageService: TokenStorageService,
     private authService: AuthenticationService,
-    private fBuilder: FormBuilder
+    private fBuilder: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -103,5 +105,21 @@ export class HeaderComponent implements OnInit {
 
   reloadPage() {
     window.location.reload();
+  }
+
+  onLocationSelect(location: string) {
+    this.router.navigate(['/events', location]);
+  }
+
+  onGenreSelect(genre: string) {
+    this.router.navigate(['/events', genre]);
+  }
+
+  onArtistSelect(artist: string) {
+    this.router.navigate(['/events', artist])
+  }
+
+  onSearch(search: string) {
+    this.router.navigate(['/events', search])
   }
 }
