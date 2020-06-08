@@ -8,6 +8,7 @@ import { UserComponent } from './components/user/user.component';
 import { HeaderComponent } from './components/header/header.component';
 import { EventDetailsComponent } from './components/shared/event-details/event-details.component';
 import { ArtistDetailsComponent } from './components/shared/artist-details/artist-details.component';
+import { ShoppingCartComponent } from './components/shared/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ArtistDetailsComponent } from './components/shared/artist-details/artis
     UserComponent,
     EventDetailsComponent,
     ArtistDetailsComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,

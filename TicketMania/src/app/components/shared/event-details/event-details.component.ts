@@ -11,7 +11,6 @@ import { add, total } from 'cart-localstorage';
 export class EventDetailsComponent implements OnInit {
 
   event: any;
-  selectedTickets: [];
 
   constructor(private route: ActivatedRoute, private api: EventService) { }
 
@@ -19,14 +18,12 @@ export class EventDetailsComponent implements OnInit {
     let id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.api.getEvent(id).subscribe(data => {
       this.event = data;
-      console.log(this.event);
-      console.log(this.event.tickets);
     })
 
   }
 
   addTicket(ticket, event) {
-    add({ id: `${ticket.ticket.id}${event.id}`, name: `${ticket.ticket.type} | ${event.name}`, price: ticket.price });
+    add({ id: `${ticket.ticket.id}${event.id}`, name: `${event.name} | ${ticket.ticket.type}`, price: ticket.price });
     console.log(total());
   }
 }

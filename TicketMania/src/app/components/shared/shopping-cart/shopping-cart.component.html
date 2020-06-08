@@ -1,0 +1,7 @@
+<p>shopping-cart works!</p>
+<div class="" *ngFor="let ticket of tickets">
+    <p>{{ticket.name}}</p>
+    <p>{{ticket.quantity}}</p>
+    <button (click)="increaseAmount(ticket.id)">Click to increase by 1</button>
+    <button (click)="(ticketAmount(ticket.id))">Amount</button>
+</div>

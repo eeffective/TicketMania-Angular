@@ -9,6 +9,7 @@ import { CreateArtistComponent } from './components/admin/create-artist/create-a
 import { CreateEventComponent } from './components/admin/create-event/create-event.component';
 import { ArtistDetailsComponent } from './components/shared/artist-details/artist-details.component';
 import { EventDetailsComponent } from './components/shared/event-details/event-details.component';
+import { ShoppingCartComponent } from './components/shared/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'events/:location', component: EventsListComponent },
   { path: 'events/:genre', component: EventsListComponent },
   { path: 'events/:artist', component: EventsListComponent },
+  { path: 'cart', component: ShoppingCartComponent },
   {
     path: 'admin',
     component: AdminComponent,
@@ -29,6 +31,7 @@ const routes: Routes = [
       { path: 'create-event', component: CreateEventComponent },
     ],
   },
+
 ];
 
 @NgModule({
@@ -47,4 +50,5 @@ export const routingComponents = [
   EventsListComponent,
   CreateEventComponent,
   UsersListComponent,
+  ShoppingCartComponent
 ];
