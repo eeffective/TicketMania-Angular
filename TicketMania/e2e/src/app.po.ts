@@ -5,15 +5,21 @@ export class AppPage {
     return browser.get(browser.baseUrl) as Promise<unknown>;
   }
 
-  getTitleText(): Promise<string> {
-    return element(by.css('app-header .tm-logo')).getText() as Promise<string>;
+  getTitleText() {
+    return element(by.css('app-header .tm-logo')).getText();
   }
 
-  getLoginButton(){
-    return element(by.css('[data-target="#modalLRForm"]'));
+  
+
+  loginBtn(){
+    return element(by.id('login'));
   }
 
-  getTextByCss(css: string){
+  elementByCss(css: string){
     return element(by.css(css));
+  }
+
+  elementById(id: string){
+    return element(by.id(id));
   }
 }

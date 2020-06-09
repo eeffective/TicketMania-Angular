@@ -1,5 +1,5 @@
 export class TicketModel {
-    constructor(public id: number, public name: string, public amount: number) {
+    constructor(public id: number, public name: string, public quantity: number, public price: number) {
 
     }
 }

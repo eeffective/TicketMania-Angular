@@ -57,8 +57,8 @@
       </button>
     </form>
     <ul class="navbar-nav mr-sm-2">
-      <button *ngIf="!isLoggedIn" data-toggle="modal" data-target="#modalLRForm"
-        class="btn btn-outline-premair my-2 my-sm-0 mr-sm-3" type="submit">
+      <button id="login" *ngIf="!isLoggedIn" data-toggle="modal" data-target="#modalLRForm"
+        class="btn loginbtn btn-outline-premair my-2 my-sm-0 mr-sm-3" type="submit">
         <i class="fas fa-user smallicon mr-2"></i> Inloggen | Registreren
       </button>
       <li *ngIf="isLoggedIn" class="nav-item dropdown">
@@ -91,11 +91,11 @@
       <div class="modal-c-tabs">
         <ul class="nav nav-tabs md-tabs tabs-2 deep-orange lighten-2" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+            <a id="inloggen" class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
               Inloggen</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+            <a class="nav-link" data-toggle="tab" id="kanus" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
               Registreren</a>
           </li>
         </ul>

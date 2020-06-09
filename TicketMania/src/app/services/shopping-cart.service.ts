@@ -1,23 +1,40 @@
 import { Injectable, EventEmitter, OnInit } from '@angular/core';
-import { list, add, remove, quantity, destor } from 'cart-localstorage';
+import { list, add, total, remove, quantity, destroy } from 'cart-localstorage';
 import { TicketModel } from '../models/TicketModel';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoppingCartService {
-  shoppingCartChanged = new EventEmitter<any[]>();
-  public tickets: TicketModel[] = list();
+  shoppingCartChanged = new EventEmitter<TicketModel[]>();
+  public tickets: TicketModel[] = [];
 
-  constructor() { }
-
-  getCartItem(id){
-
+  constructor() {
+    for (let ticket of list()) {
+      this.tickets.push(new TicketModel(ticket.id, ticket.name, ticket.quantity, ticket.price))
+    }
   }
 
-  addTicketToCart(ticket){
+
+  addTicket(ticket, event) {
+    add({ id: `${ticket.ticket.id}${event.id}`, name: `${event.name} | ${ticket.ticket.type}`, price: ticket.price })
     this.tickets.push(ticket);
     this.shoppingCartChanged.emit(this.tickets.slice())
   }
 
+  getCart() {
+    return this.tickets;
+  }
+
+  decreaseAmount(ticket) {
+    quantity(ticket.id, -1);
+  }
+
+  increaseAmount(ticket) {
+    quantity(ticket.id, +1);
+  }
+
+  getTotal() {
+    return total();
+  }
 }

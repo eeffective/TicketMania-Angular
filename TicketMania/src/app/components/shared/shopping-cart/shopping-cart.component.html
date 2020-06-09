@@ -1,7 +1,20 @@
-<p>shopping-cart works!</p>
-<div class="" *ngFor="let ticket of tickets">
-    <p>{{ticket.name}}</p>
-    <p>{{ticket.quantity}}</p>
-    <button (click)="increaseAmount(ticket.id)">Click to increase by 1</button>
-    <button (click)="(ticketAmount(ticket.id))">Amount</button>
+
+<div class="container mt-5">
+    <h1 class="cart-title">Winkelwagen</h1>
+    <ul class="cart-list list-group">
+        <li class="cart-item list-group-item d-flex justify-content-between align-items-center" *ngFor="let ticket of cartTickets">
+            <b class="item-name">{{ticket.name}}</b>
+            <p class="item-price p-2">€{{ticket.price}}</p>
+            <div class="options">
+                <button (click)="increase(ticket)" class="add-item ">Add</button>
+                <b style="font-size: 20px;" class="item-quantity p-2">{{ticket.quantity}}</b>
+                <button (click)="decrease(ticket)" class="remove-item">Remove</button>
+            </div>
+        </li>
+        <li class="total list-group-item bg-orange d-flex justify-content-between">
+            <b style="font-weight: bold; font-size: 30px;" class="total-title">Total</b>
+            <p class="total-price">{{total}}</p>
+        </li>
+    </ul>
+
 </div>
