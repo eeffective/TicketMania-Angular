@@ -26,6 +26,7 @@ export class ShoppingCartComponent implements OnInit {
 
   increase(ticket){
     this.service.increaseAmount(ticket);
+    window.location.reload();
   }
 
   clearCart() {
@@ -34,6 +35,7 @@ export class ShoppingCartComponent implements OnInit {
 
   decrease(ticket) {
     this.service.decreaseAmount(ticket)
+    window.location.reload();
   }
 
 }

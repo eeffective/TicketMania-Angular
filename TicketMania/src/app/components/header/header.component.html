@@ -67,13 +67,14 @@
           <i class="fas fa-user smallicon mr-2"></i> Mijn account
         </button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a *ngIf="isLoggedIn && isUser" class="dropdown-item" href="#"><i class="fas fa-shopping-cart"></i>
+          <a *ngIf="isLoggedIn && isUser" (click)="onCartSelect()" class="dropdown-item"><i class="fas fa-shopping-cart"></i>
             Winkelwagen</a>
           <a *ngIf="isLoggedIn && isUser" class="dropdown-item" href="#"><i class="fas fa-user-edit"></i> Mijn
             profiel</a>
           <a *ngIf="isLoggedIn && isUser" class="dropdown-item" href="#"><i class="fas fa-history"></i> Mijn
             koopgeschiedenis</a>
-
+            <a *ngIf="isLoggedIn && isAdmin" class="dropdown-item" routerLink="/admin/create-event"><i class="fas fa-plus-square"></i>Evenement toevoegen</a>
+            <a *ngIf="isLoggedIn && isAdmin" class="dropdown-item" routerLink="/admin/create-artist"><i class="fas fa-user-plus"></i>Artiest toevoegen</a>
           <div class="dropdown-divider"></div>
           <a *ngIf="isLoggedIn" class="dropdown-item" (click)="logout()"><i class="fas fa-sign-out-alt"></i>
             Uitloggen</a>
@@ -105,16 +106,16 @@
               <form [formGroup]="myLoginForm" (ngSubmit)="onLogin()">
                 <div class="md-form form-sm mb-5">
                   <i class="fas fa-user prefix"></i>
-                  <input placeholder="Gebruikersnaam" formControlName="username" type="text" id="modalLRInput10"
+                  <input placeholder="Gebruikersnaam" formControlName="username" type="text" id="userameinput"
                     class="form-control form-control-sm" />
                 </div>
                 <div class="md-form form-sm mb-4">
                   <i class="fas fa-lock prefix"></i>
-                  <input placeholder="Wachtwoord" formControlName="password" type="password" id="modalLRInput11"
+                  <input placeholder="Wachtwoord" formControlName="password" type="password" id="passwordinput"
                     class="form-control form-control-sm" />
                 </div>
                 <div class="text-center mt-2">
-                  <button class="btn btn-outline-premair">
+                  <button id="loginsubmit" class="btn btn-outline-premair">
                     Log in <i class="fas fa-sign-in ml-1"></i>
                   </button>
                 </div>

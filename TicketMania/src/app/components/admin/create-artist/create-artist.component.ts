@@ -9,20 +9,29 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CreateArtistComponent implements OnInit {
 
-  constructor(private api: ArtistService, private fb: FormBuilder) {}
-  myForm: FormGroup;
+  constructor(private api: ArtistService, private fb: FormBuilder) { }
+  myArtistForm: FormGroup;
+  artistMade = false;
+  errorMessage: '';
+
 
   ngOnInit(): void {
-    this.myForm = this.fb.group({
+    this.myArtistForm = this.fb.group({
       name: ['', Validators.required],
       biography: ['', Validators.required],
       genre: ['', Validators.required],
     });
   }
 
-  createArtist() {
-    this.api.addArtist(this.myForm);
-    console.log(this.myForm.value);
+  onArtistAdd() {
+    this.api.addArtist(this.myArtistForm.value).subscribe(data => {
+      this.artistMade = true;
+      window.location.reload();
+    },
+      (error) => {
+        this.errorMessage = error.error.message;
+        this.artistMade = false;
+      })
   }
 
 }

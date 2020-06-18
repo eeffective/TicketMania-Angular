@@ -122,4 +122,8 @@ export class HeaderComponent implements OnInit {
   onSearch(search: string) {
     this.router.navigate(['/events', search])
   }
+
+  onCartSelect(){
+    this.router.navigate(['/cart'])
+  }
 }

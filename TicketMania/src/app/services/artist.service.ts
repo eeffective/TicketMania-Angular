@@ -12,14 +12,15 @@ export class ArtistService {
   constructor(private http: HttpClient) {}
 
   addArtist(artistModel: any): Observable<any> {
+    debugger
     return this.http
       .post<any>(API_URL, artistModel)
       .pipe(catchError(this.handleError));
   }
 
-  getArtists(): Observable<any[]> {
+  getArtists(): Observable<any> {
     return this.http
-      .get<any[]>(API_URL)
+      .get<any>(API_URL)
       .pipe(catchError(this.handleError));
   }
 

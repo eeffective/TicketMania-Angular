@@ -1,0 +1,7 @@
+{
+  "baseUrl": "http://localhost:4200",
+  "adminUsername": "admin",
+  "adminPassword": "admin",
+  "userUsername": "user",
+  "userPassword": "user"
+}

@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { EventDetailsComponent } from './components/shared/event-details/event-details.component';
 import { ArtistDetailsComponent } from './components/shared/artist-details/artist-details.component';
 import { ShoppingCartComponent } from './components/shared/shopping-cart/shopping-cart.component';
+import { AuthInterceptor } from './utilities/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,13 @@ import { ShoppingCartComponent } from './components/shared/shopping-cart/shoppin
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

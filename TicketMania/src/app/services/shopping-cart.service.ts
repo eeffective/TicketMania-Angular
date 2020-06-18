@@ -17,7 +17,7 @@ export class ShoppingCartService {
 
 
   addTicket(ticket, event) {
-    add({ id: `${ticket.ticket.id}${event.id}`, name: `${event.name} | ${ticket.ticket.type}`, price: ticket.price })
+    add({ id: `${ticket.id}${event.id}`, name: `${event.name} | ${ticket.type}`, price: ticket.price })
     this.tickets.push(ticket);
     this.shoppingCartChanged.emit(this.tickets.slice())
   }

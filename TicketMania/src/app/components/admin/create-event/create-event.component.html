@@ -1,1 +1,31 @@
-<p>create-event works!</p>
+<div class="container mt-4">
+    <h3>Nieuw evenement</h3>
+    <form [formGroup]="myEventForm" (ngSubmit)="onSaveEvent()">
+        <div class="form-group">
+          <label for="name">Naam</label>
+          <input type="text" class="form-control" id="name" formControlName="name">
+        </div>
+        <div class="form-group">
+            <label for="description">Beschrijving</label>
+            <input type="text" class="form-control" id="description" formControlName="description">
+          </div>
+          <div class="form-group">
+            <label for="genre">Genre</label>
+            <input type="text" class="form-control" id="genre" formControlName="genre">
+          </div>
+          <div class="form-group">
+            <label for="location">Locatie</label>
+            <input type="text" class="form-control" id="location" formControlName="location">
+          </div>
+          <div class="form-group">
+            <label for="duration">Duur</label>
+            <input type="number" class="form-control" id="duration" formControlName="duration">
+          </div>
+          <div class="form-group">
+            <label for="dateTime">Datum</label>
+            <input type="date" class="form-control" id="dateTime" formControlName="dateTime">
+          </div>
+        
+        <button type="submit" class="btn btn-primary">Opslaan</button>
+      </form>
+</div>

@@ -3,29 +3,89 @@
     <div class="col my-auto">
       <h1 class="event-title mb-5">{{ event.name }}</h1>
       <div class="event-details">
-        <img src="https://i.picsum.photos/id/1054/400/300.jpg" class="card-img-top img-fluid" />
+        <img
+          src="https://picsum.photos/400/300"
+          class="card-img-top img-fluid"
+        />
         <div class="event-description p-2">
-          {{event.description}}
+          {{ event.description }}
         </div>
-
       </div>
     </div>
     <div class="col ml-5">
       <h1 class="tickets-title mb-5">Tickets</h1>
       <ul class="list-group">
         <li *ngFor="let ticket of event.tickets" class="list-group-item p-12">
-          <a class="event-ticket" target="_blank" href="https://ikwilhierweg.nl/">{{ticket.ticket.type}} <span
-              class="ticket-price">€{{ticket.price}}</span>
+          <a
+            class="event-ticket"
+            target="_blank"
+            href="https://ikwilhierweg.nl/"
+            >{{ ticket.type }}
+            <span class="ticket-price">€{{ ticket.price }}</span>
           </a>
-          <button (click)="addTicket(ticket, event)" class="add-ticket">+</button>
-          <p><small class="amount-left">Nog {{ticket.amount}} tickets verkrijgbaar!</small></p>
+          <button
+            *ngIf="!isUserAdmin()"
+            (click)="addTicket(ticket, event)"
+            class="add-ticket"
+          >
+            +
+          </button>
+          <p>
+            <small class="amount-left"
+              >Nog {{ ticket.quantityLeft }} tickets verkrijgbaar!</small
+            >
+          </p>
+        </li>
+        <li *ngIf="isUserAdmin()" class="list-group-item p-12 pb-4">
+          <form [formGroup]="myTicketForm" (ngSubmit)="onTicketAdd()">
+            <div class="form-group">
+              <label for="type">Type</label>
+              <input
+                type="text"
+                class="form-control"
+                id="type"
+                formControlName="type"
+              />
+            </div>
+            <div class="form-group">
+              <label for="price">Prijs</label>
+              <input
+                type="number"
+                class="form-control"
+                id="price"
+                formControlName="price"
+                min="1"
+              />
+            </div>
+            <div class="form-group">
+              <label for="quantityLeft">Aantal beschikbaar</label>
+              <input
+                type="number"
+                class="form-control"
+                id="quantityLeft"
+                formControlName="quantityLeft"
+                min="1"
+              />
+            </div>
+            <button type="submit" class="btn p-2 mt-2 float-right">
+              Ticket toevoegen
+            </button>
+          </form>
         </li>
       </ul>
     </div>
   </div>
-  <div class="artists-container ml-5">
-    <ul class="artist-list">
-      <li class="artist-item">Name artist here</li>
+  <div class="col mt-4">
+    <h1>Artiesten</h1>
+    <ul class="list-group">
+      <li *ngFor="let artist of event.musicArtists" class="artist-item">
+        {{ artist.name }} - {{ artist.genre }}
+      </li>
+    </ul>
+    <ul class="list-group">
+      <li class="artist-item" *ngFor="let artist of newArtists">
+        {{ artist.name }}
+      </li>
     </ul>
   </div>
 </div>

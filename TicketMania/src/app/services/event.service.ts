@@ -18,9 +18,21 @@ export class EventService {
       .pipe(catchError(this.handleError));
   }
 
-  getEvent(id: number): Observable<any> {
+  getEventById(id: number): Observable<any> {
     return this.http
       .get<any>(`${API_URL}/${id}`)
+      .pipe(catchError(this.handleError));
+  }
+
+  getEventsByLocation(location: string): Observable<any> {
+    return this.http
+      .get<any>(`${API_URL}/location/${location}`)
+      .pipe(catchError(this.handleError));
+  }
+
+  getEventsByGenre(genre: string): Observable<any> {
+    return this.http
+      .get<any>(`${API_URL}/genre/${genre}`)
       .pipe(catchError(this.handleError));
   }
 

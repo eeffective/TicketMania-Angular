@@ -1,21 +1,39 @@
-<form [formGroup]="myForm" (ngSubmit)="createArtist()">
-    <p>Create Artist</p>
-    <input
-      [ngClass]="{
-        'has-error': myForm.get('name').errors && myForm.get('name').touched
-      }"
-      type="text"
-      formControlName="name"
-      placeholder="Name"
-    />
-    <div *ngIf="myForm.get('name').errors && myForm.get('name').touched">
-      <span *ngIf="myForm.get('name').errors.required">
-        Name is required
-      </span>
+<div class="container mt-5">
+  <app-artists-list></app-artists-list>
+</div>
+
+<div class="container mt-4">
+  <h3>Nieuw artiest</h3>
+  <form [formGroup]="myArtistForm" (ngSubmit)="onArtistAdd()">
+    <div class="form-group">
+      <label for="name">Naam</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name"
+      />
     </div>
-  
-    <input type="text" formControlName="biography" placeholder="Biography" />
-    <input type="text" formControlName="genre" placeholder="Genre" />
-    <button type="submit">Save</button>
+    <div class="form-group">
+      <label for="biography">Biografie</label>
+      <input
+        type="text"
+        class="form-control"
+        id="biography"
+        formControlName="biography"
+      />
+    </div>
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="genre"
+        formControlName="genre"
+      />
+    </div>
+    <button type="submit" class="btn p-2 mt-2 float-right">
+      Artiest toevoegen
+    </button>
   </form>
-  
+</div>

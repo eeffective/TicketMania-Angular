@@ -1,16 +1,16 @@
 <div class="container mt-5">
   <h1 class="recommended-title">Aanbevolen</h1>
-  <div class="row">
+  <div class="row mt-5">
     <!-- Card 2 -->
-    <div *ngFor="let event of events" class="col-md-4 card-container">
+    <div *ngFor="let event of events" class="col-md-4 card-container mb-4">
       <div class="card-flip">
         <!-- Card 2 Front -->
         <div class="card front">
           <img
-            src="https://i.picsum.photos/id/1054/400/300.jpg"
+            src="https://picsum.photos/400/300"
             class="card-img-top img-fluid"
           />
-          <div class="event-date">{{event.genre}}</div>
+          <div class="event-date">{{ event.genre }}</div>
           <div class="card-block">
             <h3 class="card-title">{{ event.name }}</h3>
             <p class="card-text">{{ event.location }}</p>

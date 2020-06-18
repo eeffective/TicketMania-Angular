@@ -1,1 +1,16 @@
-<p>artists-list works!</p>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Naam</th>
+      <th scope="col">Biografie</th>
+      <th scope="col">Genre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let artist of artists">
+      <th scope="row">{{ artist.name }}</th>
+      <td>{{ artist.biography }}</td>
+      <td>{{ artist.genre }}</td>
+    </tr>
+  </tbody>
+</table>
